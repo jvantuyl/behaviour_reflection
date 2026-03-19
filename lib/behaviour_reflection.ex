@@ -57,7 +57,7 @@ defmodule Behaviour.Reflection do
   end
 
   defp implements_behaviour?(module, behaviour) do
-    module.module_info[:attributes]
+    module.module_info()[:attributes]
     |> Keyword.get_values(:behaviour)
     |> List.flatten()
     |> Enum.member?(behaviour)
